@@ -15,14 +15,14 @@
     <meta property="og:url" content="https://mandiayesylla.com/">
     <meta property="og:title" content="Mandiaye Sylla — Architecte Logiciel & Product Builder IA">
     <meta property="og:description" content="Découvrez le portfolio de Mandiaye Sylla. Expert en architecture logicielle et intelligence artificielle.">
-    <meta property="og:image" content="https://mandiayesylla.com/hero-profile.png">
+    <meta property="og:image" content="https://mandiayesylla.com/hero-profile.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mandiayesylla.com/">
     <meta property="twitter:title" content="Mandiaye Sylla — Architecte Logiciel & Product Builder IA">
     <meta property="twitter:description" content="Découvrez le portfolio de Mandiaye Sylla. Expert en architecture logicielle et intelligence artificielle.">
-    <meta property="twitter:image" content="https://mandiayesylla.com/hero-profile.png">
+    <meta property="twitter:image" content="https://mandiayesylla.com/hero-profile.jpg">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://mandiayesylla.com/">
@@ -31,12 +31,16 @@
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&f[]=general-sans@600,500,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Preload LCP Image for maximum speed -->
+    <link rel="preload" href="hero-profile.jpg" as="image">
+    
     <link rel="stylesheet" href="style.css">
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Defer external scripts to prevent render-blocking -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
 <body class="loading">
@@ -102,7 +106,7 @@
                     <div class="hero-visual fade-up-hero">
                         <div class="visual-main-image">
                             <!-- Main Portrait -->
-                            <img src="hero-profile.png" alt="Mandiaye Sylla">
+                            <img src="hero-profile.jpg" alt="Mandiaye Sylla">
                             
 
                             <!-- Floating Glass Card 1 (Bottom Right) -->
@@ -179,7 +183,7 @@
                         <div class="project-card fade-up-scroll">
                             <div class="project-image">
                                 <!-- Actual screenshot of the project -->
-                                <img src="chez-zahra.png?v=2"
+                                <img src="chez-zahra.jpg?v=2"
                                     alt="Chez Zahra E-commerce">
                                 <a href="https://chezahra.store/" class="project-visit-overlay" target="_blank">
                                     <span>Visiter le site</span> <i data-lucide="external-link"></i>
@@ -211,7 +215,7 @@
                         <!-- Projet 2 : Mak Booster -->
                         <div class="project-card fade-up-scroll">
                             <div class="project-image">
-                                <img src="mak-booster.png"
+                                <img src="mak-booster.jpg"
                                     alt="Mak Booster E-commerce Dashboard">
                                 <a href="https://www.makboster.store/" class="project-visit-overlay" target="_blank">
                                     <span>Visiter le site</span> <i data-lucide="external-link"></i>
