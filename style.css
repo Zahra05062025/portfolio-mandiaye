@@ -402,8 +402,8 @@ html.lenis { height: auto; }
     
     .hero-subtitle { font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); }
     
-    .hero-testimonial { justify-content: flex-start; margin: 0 0 30px 0; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 10px 20px; border-radius: 2rem; display: inline-flex; }
-    .testi-text { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.9; }
+    .hero-testimonial { justify-content: flex-start; margin: 0 0 30px 0; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 8px 15px; border-radius: 2rem; display: inline-flex; max-width: 100%; overflow: hidden; }
+    .testi-text { font-size: 0.65rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.9; white-space: nowrap; display: flex; align-items: center; }
     
     .hero-actions { justify-content: flex-start; width: 100%; }
     .hero-actions .magnetic-btn-small { width: 100%; max-width: 320px; justify-content: center; padding: 18px 30px; font-size: 0.95rem; }
