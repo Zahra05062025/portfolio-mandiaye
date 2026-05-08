@@ -151,6 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Navbar Hide on Scroll ---
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar-pill');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY && window.scrollY > 150) {
+            navbar.classList.add('hidden-nav');
+        } else {
+            navbar.classList.remove('hidden-nav');
+        }
+        lastScrollY = window.scrollY;
+    });
+
     // --- WhatsApp Form Handler ---
     const waForm = document.getElementById('whatsapp-form');
     if (waForm) {
