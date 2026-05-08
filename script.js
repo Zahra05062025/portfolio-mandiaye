@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         // --- Parallax Effect on Images ---
-        gsap.utils.toArray('.visual-main-image img, .project-image img').forEach(img => {
+        gsap.utils.toArray('.project-image img').forEach(img => {
             gsap.set(img, { scale: 1.15 }); // Prevent edge clipping during parallax
             gsap.fromTo(img, 
                 { yPercent: -10 },
