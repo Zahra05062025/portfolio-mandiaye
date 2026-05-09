@@ -151,6 +151,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Hover Word Image Follower ---
+    const follower = document.getElementById('hover-img-follower');
+    const followerImg = document.getElementById('hover-img-src');
+    
+    if (follower && followerImg) {
+        document.querySelectorAll('.hover-word').forEach(word => {
+            word.addEventListener('mouseenter', () => {
+                followerImg.src = word.dataset.img;
+                follower.classList.add('active');
+            });
+            word.addEventListener('mouseleave', () => {
+                follower.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            follower.style.left = e.clientX + 'px';
+            follower.style.top = e.clientY + 'px';
+        });
+    }
+
     // --- Navbar Hide on Scroll ---
     let lastScrollY = window.scrollY;
     const navbar = document.querySelector('.navbar-pill');
