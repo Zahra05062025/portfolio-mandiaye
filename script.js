@@ -172,18 +172,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- Navbar Hide on Scroll ---
+    // --- Navbar Smart Hide/Show Logic ---
     let lastScrollY = window.scrollY;
     const navbar = document.querySelector('.navbar-pill');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > lastScrollY && window.scrollY > 150) {
+        const currentScrollY = window.scrollY;
+        
+        // 1. Hide if at the very top (to avoid overlapping marquee)
+        if (currentScrollY < 100) {
             navbar.classList.add('hidden-nav');
-        } else {
+        } 
+        // 2. Hide if scrolling down
+        else if (currentScrollY > lastScrollY && currentScrollY > 150) {
+            navbar.classList.add('hidden-nav');
+        } 
+        // 3. Show if scrolling up
+        else {
             navbar.classList.remove('hidden-nav');
         }
-        lastScrollY = window.scrollY;
-    });
+        
+        lastScrollY = currentScrollY;
+    }, { passive: true });
 
     // --- WhatsApp Form Handler ---
     const waForm = document.getElementById('whatsapp-form');
