@@ -134,6 +134,13 @@ html.lenis { height: auto; }
     transform-origin: center;
     z-index: 10;
 }
+
+.marquee-wrapper.top-marquee {
+    transform: translateX(-50%);
+    margin: 0;
+    border-top: none;
+    background: rgba(15, 15, 19, 0.9);
+}
 .marquee-content {
     display: flex;
     width: max-content;
