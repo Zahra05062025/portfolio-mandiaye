@@ -179,15 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
         
-        // 1. Hide if at the very top (to avoid overlapping marquee)
-        if (currentScrollY < 100) {
+        // 1. Hide if scrolling down
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
             navbar.classList.add('hidden-nav');
         } 
-        // 2. Hide if scrolling down
-        else if (currentScrollY > lastScrollY && currentScrollY > 150) {
-            navbar.classList.add('hidden-nav');
-        } 
-        // 3. Show if scrolling up
+        // 2. Show if scrolling up or at the very top
         else {
             navbar.classList.remove('hidden-nav');
         }
