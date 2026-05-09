@@ -70,24 +70,25 @@ html.lenis { height: auto; }
     100% { transform: translate(5%,0) }
 }
 
-.glow-bg { position: fixed; width: 600px; height: 600px; border-radius: 50%; pointer-events: none; z-index: -1; filter: blur(120px); opacity: 0.6; }
-.glow-bg.top-right { top: -20%; right: -10%; background: radial-gradient(circle, rgba(37, 167, 129, 0.15) 0%, transparent 70%); animation: pulse-glow 15s infinite alternate ease-in-out; }
-.glow-bg.bottom-left { bottom: -20%; left: -10%; background: radial-gradient(circle, rgba(37, 167, 129, 0.1) 0%, transparent 70%); animation: pulse-glow 20s infinite alternate-reverse ease-in-out; }
-.glow-bg.center-hero { top: 20%; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(37, 167, 129, 0.05) 0%, transparent 80%); animation: pulse-glow 12s infinite alternate ease-in-out; }
+.glow-bg { position: fixed; width: 600px; height: 600px; border-radius: 50%; pointer-events: none; z-index: -1; filter: blur(100px); opacity: 0.6; will-change: transform, opacity; }
+.glow-bg.top-right { top: -20%; right: -10%; background: radial-gradient(circle, rgba(37, 167, 129, 0.12) 0%, transparent 70%); animation: pulse-glow 15s infinite alternate ease-in-out; }
+.glow-bg.bottom-left { bottom: -20%; left: -10%; background: radial-gradient(circle, rgba(37, 167, 129, 0.08) 0%, transparent 70%); animation: pulse-glow 20s infinite alternate-reverse ease-in-out; }
+.glow-bg.center-hero { top: 10%; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(37, 167, 129, 0.04) 0%, transparent 80%); animation: pulse-glow 12s infinite alternate ease-in-out; }
 
 @keyframes pulse-glow {
-    0% { opacity: 0.3; transform: translate(0, 0) scale(1); }
-    50% { opacity: 0.6; transform: translate(-5%, 5%) scale(1.1); }
-    100% { opacity: 0.4; transform: translate(5%, -5%) scale(0.9); }
+    0% { opacity: 0.2; transform: translate3d(0, 0, 0) scale(1); }
+    100% { opacity: 0.5; transform: translate3d(-2%, 2%, 0) scale(1.05); }
 }
 
-.section-tag { font-family: var(--font-mono); font-size: 0.7rem; color: rgba(245, 243, 238, 0.7); border: 1px solid rgba(245, 243, 238, 0.15); padding: 6px 14px; border-radius: 2rem; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.02); }
+.noise-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.04; pointer-events: none; z-index: 9999; will-change: transform; }
+
+.section-tag { font-family: var(--font-mono); font-size: 0.7rem; color: rgba(245, 243, 238, 0.7); border: 1px solid rgba(245, 243, 238, 0.15); padding: 6px 14px; border-radius: 2rem; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.02); will-change: transform, opacity; }
 .section-header.center-header { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
 /* Cursor */
-.cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 10000; pointer-events: none; mix-blend-mode: difference; }
-.cursor-dot { width: 6px; height: 6px; background-color: var(--color-accent); }
-.cursor-outline { width: 40px; height: 40px; border: 1px solid var(--color-text); transition: width 0.2s, height 0.2s, background-color 0.2s; }
+.cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; pointer-events: none; mix-blend-mode: difference; z-index: 10000; will-change: transform; }
+.cursor-dot { width: 6px; height: 6px; background-color: var(--color-accent); border-radius: 50%; }
+.cursor-outline { width: 40px; height: 40px; border: 1px solid var(--color-text); border-radius: 50%; transition: width 0.2s, height 0.2s, background-color 0.2s; }
 .cursor-outline.hover { width: 60px; height: 60px; background-color: rgba(37, 167, 129, 0.1); border-color: var(--color-accent); }
 @media (pointer: coarse), (max-width: 992px) { .cursor-dot, .cursor-outline { display: none !important; } }
 

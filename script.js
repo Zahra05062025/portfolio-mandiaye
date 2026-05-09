@@ -124,12 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.matchMedia("(pointer: fine)").matches) {
         window.addEventListener("mousemove", (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
-        });
+            const { clientX: x, clientY: y } = e;
+            gsap.to(cursorDot, { x, y, xPercent: -50, yPercent: -50, duration: 0, ease: 'none' });
+            gsap.to(cursorOutline, { x, y, xPercent: -50, yPercent: -50, duration: 0.5, ease: 'power3.out' });
+        }, { passive: true });
 
         document.querySelectorAll("a, button, .timeline-card, .edu-card, .skill-tag-weighted").forEach(el => {
             el.addEventListener("mouseenter", () => cursorOutline.classList.add("hover"));
