@@ -88,8 +88,8 @@ html.lenis { height: auto; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 .section-header { margin-bottom: 60px; }
 .center-header { text-align: center; }
-.section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
-.section-subtitle { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-accent); text-transform: uppercase; margin-top: 10px; }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.02em; }
+.section-subtitle { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-accent); margin-top: 10px; }
 .text-accent { color: var(--color-accent); font-style: italic; font-family: var(--font-serif); }
 
 /* Micro-interactions */
@@ -145,7 +145,7 @@ html.lenis { height: auto; }
     font-weight: 700;
     white-space: nowrap;
     padding: 0 1rem;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.05em;
 }
 @keyframes marquee-scroll {
