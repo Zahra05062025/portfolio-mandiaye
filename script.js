@@ -201,5 +201,37 @@ document.addEventListener("DOMContentLoaded", () => {
             window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
         });
     }
-});
 
+    // --- Read More Toggle: About ---
+    const aboutBtn = document.getElementById('about-toggle-btn');
+    const aboutExtra = document.getElementById('about-extra');
+    if (aboutBtn && aboutExtra) {
+        aboutBtn.addEventListener('click', () => {
+            const isHidden = aboutExtra.style.display === 'none' || aboutExtra.style.display === '';
+            aboutExtra.style.display = isHidden ? 'block' : 'none';
+            aboutBtn.innerHTML = isHidden
+                ? 'Voir moins <i data-lucide="chevron-up"></i>'
+                : 'Voir plus <i data-lucide="chevron-down"></i>';
+            lucide.createIcons();
+        });
+    }
+
+    // --- Read More Toggle: Projects ---
+    document.querySelectorAll('.project-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const extraContent = btn.previousElementSibling.querySelector('.project-extra');
+            if (extraContent) {
+                const isHidden = extraContent.style.display === 'none' || extraContent.style.display === '';
+                extraContent.style.display = isHidden ? 'inline' : 'none';
+                btn.innerHTML = isHidden
+                    ? 'Voir moins <i data-lucide="chevron-up"></i>'
+                    : 'Voir plus <i data-lucide="chevron-down"></i>';
+                lucide.createIcons();
+            }
+        });
+    });
+
+    // --- Init Lucide Icons ---
+    lucide.createIcons();
+
+});

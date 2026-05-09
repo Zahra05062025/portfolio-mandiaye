@@ -535,43 +535,7 @@
         </main>
     </div>
     <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-        
-        // Read More Toggle for About
-        const aboutBtn = document.getElementById('about-toggle-btn');
-        const aboutExtra = document.getElementById('about-extra');
-        if (aboutBtn && aboutExtra) {
-            aboutBtn.addEventListener('click', () => {
-                if (aboutExtra.style.display === 'none') {
-                    aboutExtra.style.display = 'block';
-                    aboutBtn.innerHTML = 'Voir moins <i data-lucide="chevron-up"></i>';
-                } else {
-                    aboutExtra.style.display = 'none';
-                    aboutBtn.innerHTML = 'Voir plus <i data-lucide="chevron-down"></i>';
-                }
-                lucide.createIcons();
-            });
-        }
 
-        // Read More Toggle for Projects
-        const projectBtns = document.querySelectorAll('.project-toggle-btn');
-        projectBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const extraContent = btn.previousElementSibling.querySelector('.project-extra');
-                if (extraContent) {
-                    if (extraContent.style.display === 'none') {
-                        extraContent.style.display = 'inline';
-                        btn.innerHTML = 'Voir moins <i data-lucide="chevron-up"></i>';
-                    } else {
-                        extraContent.style.display = 'none';
-                        btn.innerHTML = 'Voir plus <i data-lucide="chevron-down"></i>';
-                    }
-                    lucide.createIcons();
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
